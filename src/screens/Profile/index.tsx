@@ -1,14 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import { View, Text } from 'react-native';
+import { 
+  View, 
+  Text, 
+  Image, 
+  StatusBar,
+  ImageBackground } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { Feather } from '@expo/vector-icons';
 
 import { ProfileHeader } from '../../components/ProfileHeader';
 import { Avatar } from '../../components/Avatar';
 import { Button } from '../../components/Button';
 
 import { styles } from './styles';
-import { theme } from '../../styles/theme';
 
 type Params = {
   token: string
@@ -44,75 +47,59 @@ export function Profile() {
   }, [])
 
   return (
+    <>
+     <StatusBar
+    barStyle='dark-content'
+    translucent
+    />
     <View style={styles.container}>
-      <ProfileHeader />
-
+      <ImageBackground source={require('../../assets/back.png')}
+      style={styles.background}>
+      <ProfileHeader 
+      headerTitle='Carteirinha'
+       />
       <View style={styles.content}>
         <View style={styles.profile}>
+          <Text style={styles.name}>
+            Oi, {profile.given_name}!
+          </Text>
           <Avatar
             source={{ uri: profile.picture }}
           />
-
-          <Text style={styles.name}>
-            {profile.name}
-          </Text>
-
-          <View style={styles.email}>
-            <Feather name="mail" color={theme.colors.secondary} size={18} />
-            <Text style={styles.emailText}>
-              {profile.email}
-            </Text>
-          </View>
         </View>
 
         <View style={styles.about}>
           <View style={styles.info}>
-            <Feather
-              name="user"
-              size={34}
-              color={theme.colors.note}
-            />
-            <Text style={styles.label}>
-              Nome
+            <Text style={styles.textName}>
+              {profile.name}
             </Text>
-            <Text style={styles.text}>
-              {profile.given_name}
+            <Text style={styles.courseName} >
+              Engenharia de Computação
+            </Text>
+            <Text style={styles.schoolName} >
+              Escola Superior de Tecnologia
             </Text>
           </View>
-
-          <View style={styles.info}>
-            <Feather
-              name="heart"
-              size={34}
-              color={theme.colors.note}
-            />
-            <Text style={styles.label}>
-              Sobrenome
-            </Text>
-            <Text style={styles.text}>
-              {profile.family_name}
-            </Text>
+            <View style={styles.numbers} >
+              <Text style={styles.enrollNumber} >
+                2015080056
+              </Text>
+              <Text style={styles.otherNumber} >
+                9333
+              </Text>
+            </View>
+            <Image
+            style={styles.codigoBarras} 
+            source={require('../../assets/codigobarras.png')} />
           </View>
-        </View>
-
-        <View style={styles.locale}>
-          <Feather
-            name="map-pin"
-            size={18}
-            color={theme.colors.note}
-          />
-
-          <Text style={styles.localeText}>
-            Localidade do perfil do usuário: {profile.locale}
-          </Text>
-        </View>
-
         <Button
           title="Desconectar"
           icon="power"
           onPress={handleLogout}
         />
       </View>
+      </ImageBackground>
     </View>
+    </>
   );
 }

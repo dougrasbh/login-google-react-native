@@ -1,20 +1,17 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text} from 'react-native';
 
 import { styles } from './styles';
-import headerImg from '../../assets/header.png';
 
-export function ProfileHeader() {
+
+type Props = {
+  headerTitle: string
+}
+
+export function ProfileHeader({headerTitle}: Props) {
   return (
     <View style={styles.container}>
-      <Image source={headerImg} style={styles.imageHeader} />
-
-      <View style={styles.header}>
-        <View style={styles.welcome}>
-          <Text style={styles.title}>Perfil</Text>
-          <Text style={styles.subtitle}>dados da sua conta Google</Text>
-        </View>
-      </View>
+      <Text style={styles.title}>{headerTitle}</Text>
     </View>
   );
 }

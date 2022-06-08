@@ -4,7 +4,6 @@ import { useNavigation } from '@react-navigation/native';
 
 import { Button } from '../../components/Button';
 
-
 import * as AuthSession from 'expo-auth-session';
 
 const { CLIENT_ID } = process.env

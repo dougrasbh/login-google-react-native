@@ -7,62 +7,94 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: theme.colors.background,
   },
+  background: {
+    width: '100%',
+    height: '100%'
+  },
   profile: {
     width: '100%',
-    alignItems: 'center',
   },
   content: {
-    flex: 1,
-    justifyContent: 'space-around',
     paddingBottom: getBottomSpace() + 20,
     paddingHorizontal: 44,
   },
   name: {
     fontFamily: theme.fonts.bold,
     color: theme.colors.text,
-    fontSize: 32,
-    marginTop: 7
-  },
-  email: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 7,
-  },
-  emailText: {
-    fontFamily: theme.fonts.medium,
-    color: theme.colors.secondary,
-    marginLeft: 5,
-    fontSize: 14,
+    fontSize: 23,
+    paddingVertical: 20,    
   },
   about: {
     width: '100%',
     marginVertical: 32,
-    flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  label: {
+  textName: {
+    width: '115%',
+    textAlign: 'center',
     fontFamily: theme.fonts.regular,
-    color: theme.colors.note,
-    marginBottom: 7,
-    fontSize: 14,
-  },
-  text: {
-    fontFamily: theme.fonts.medium,
     color: theme.colors.text,
-    fontSize: 18
+    fontSize: 18,
+    backgroundColor: '#EAF2CE',
+    borderRadius: 20,
+    paddingVertical: 10,
+    marginBottom: 15
   },
-  locale: {
-    justifyContent: 'center',
-    flexDirection: 'row',
-  },
-  localeText: {
+  courseName: {
+    width: '115%',
+    textAlign: 'center',
     fontFamily: theme.fonts.regular,
-    color: theme.colors.note,
-    marginLeft: 5,
-    fontSize: 14,
+    color: theme.colors.text,
+    fontSize: 18,
+    backgroundColor: '#EAF2CE',
+    borderRadius: 20,
+    paddingVertical: 10,
+    marginBottom: 15
+  },
+  schoolName: {
+    width: '115%',
+    textAlign: 'center',
+    fontFamily: theme.fonts.regular,
+    color: theme.colors.text,
+    fontSize: 18,
+    backgroundColor: '#EAF2CE',
+    borderRadius: 20,
+    paddingVertical: 10,
+    marginBottom: 15
+  },
+  numbers: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  enrollNumber: {
+    width: '60%',
+    textAlign: 'center',
+    fontFamily: theme.fonts.regular,
+    color: theme.colors.text,
+    fontSize: 18,
+    backgroundColor: '#EAF2CE',
+    borderRadius: 20,
+    paddingVertical: 10,
+    marginBottom: 15,
+    marginRight: 10
+  },
+  otherNumber: {
+    width: '40%',
+    textAlign: 'center',
+    fontFamily: theme.fonts.regular,
+    color: theme.colors.text,
+    fontSize: 18,
+    backgroundColor: '#EAF2CE',
+    borderRadius: 20,
+    paddingVertical: 10,
+    marginBottom: 15
   },
   info: {
-    alignItems: 'center'
+    alignItems: 'center',
   },
+  codigoBarras: {
+    width: '100%',
+    height: 70
+  }
 });

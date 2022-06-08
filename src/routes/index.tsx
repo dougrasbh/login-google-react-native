@@ -4,7 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import { Profile } from '../screens/Profile';
 import { SignIn } from '../screens/SignIn';
-import { theme } from '../styles/theme';
 
 const { Navigator, Screen } = createStackNavigator();
 
