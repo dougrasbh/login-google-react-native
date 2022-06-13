@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@babel/helper-hoist-variables": "^7.16.7",
     "@expo-google-fonts/inter": "^0.2.0",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/bottom-tabs": "^6.3.1",
