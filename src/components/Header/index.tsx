@@ -8,7 +8,7 @@ type Props = {
   headerTitle: string
 }
 
-export function ProfileHeader({headerTitle}: Props) {
+export function Header({headerTitle}: Props) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{headerTitle}</Text>

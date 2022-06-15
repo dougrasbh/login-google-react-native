@@ -7,7 +7,7 @@ import {
   ImageBackground } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
-import { ProfileHeader } from '../../components/ProfileHeader';
+import { Header } from '../../components/Header';
 import { Avatar } from '../../components/Avatar';
 import { Button } from '../../components/Button';
 
@@ -17,7 +17,7 @@ type Params = {
   token: string
 }
 
-type Profile = {
+type WalletUEA = {
   email: string;
   family_name: string;
   given_name: string;
@@ -26,8 +26,8 @@ type Profile = {
   picture: string;
 }
 
-export function Profile() {
-  const [profile, setProfile] = useState({} as Profile)
+export function WalletUEA() {
+  const [profile, setProfile] = useState({} as WalletUEA)
   const route = useRoute()
   const navigation = useNavigation();
   const { token } = route.params as Params
@@ -55,7 +55,7 @@ export function Profile() {
     <View style={styles.container}>
       <ImageBackground source={require('../../assets/back.png')}
       style={styles.background}>
-      <ProfileHeader 
+      <Header 
       headerTitle='Carteirinha'
        />
       <View style={styles.content}>

@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { Profile } from '../screens/Profile';
+import { WalletUEA } from '../screens/WalletUEA';
 import { SignIn } from '../screens/SignIn';
 
 const { Navigator, Screen } = createStackNavigator();
@@ -16,8 +16,8 @@ export function Routes() {
           component={SignIn}
         />
         <Screen
-          name="Profile"
-          component={Profile}
+          name="WalletUEA"
+          component={WalletUEA}
         />
       </Navigator>
     </NavigationContainer>
