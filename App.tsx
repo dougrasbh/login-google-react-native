@@ -10,7 +10,7 @@ import {
   Inter_700Bold
 } from '@expo-google-fonts/inter';
 
-import { Routes } from './src/routes';
+import { BottomMenuRoutes } from './src/routes';
 import { View } from 'react-native';
 import { theme } from './src/styles/theme';
 
@@ -37,8 +37,9 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
+      
+      <BottomMenuRoutes />
 
-      <Routes />
     </View>
   );
 }

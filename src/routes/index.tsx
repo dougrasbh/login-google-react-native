@@ -1,25 +1,85 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BottomTabBar } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native';
-
 import { WalletUEA } from '../screens/WalletUEA';
 import { SignIn } from '../screens/SignIn';
+import { Tickets } from '../screens/Tickets';
 
-const { Navigator, Screen } = createStackNavigator();
+import { 
+  Entypo, 
+  FontAwesome,
+  FontAwesome5,
+  MaterialCommunityIcons } from '@expo/vector-icons'
 
-export function Routes() {
+const Tab = createBottomTabNavigator()
+
+export function BottomMenuRoutes() {
   return (
     <NavigationContainer>
-      <Navigator headerMode="none">
-        <Screen
-          name="SignIn"
-          component={SignIn}
+      <Tab.Navigator
+      tabBar={
+        props => <BottomTabBar {...props} state={{...props.state, routes: props.state.routes.slice(0,6)}}></BottomTabBar>}
+      screenOptions={{
+        tabBarStyle: {
+          borderTopColor: 'transparent',
+          borderEndColor:  'transparent',
+          paddingBottom: 5,
+          paddingTop: 5,
+        },
+        tabBarActiveTintColor : '#B6D96A',
+        tabBarInactiveTintColor: '#707365',
+        headerShown: false
+      }}
+      >
+        <Tab.Screen 
+        name='SignIn' 
+        component={SignIn} 
+        options={{
+          tabBarStyle: { display: "none" },
+        }}
         />
-        <Screen
-          name="WalletUEA"
-          component={WalletUEA}
+
+        <Tab.Screen 
+        name='WalletUEA' 
+        component={WalletUEA}
+        options={{tabBarIcon: ({focused, size, color}) => (
+          <FontAwesome name="id-card-o" size={size} color={color} />
+        )}} 
+         />
+
+        <Tab.Screen
+        name='Tickets' 
+        component={Tickets}
+        options={{tabBarIcon: ({focused, size, color}) => (
+          <Entypo name="ticket" size={size} color={color} />
+        )}} 
         />
-      </Navigator>
+
+        <Tab.Screen 
+        name='Comprar' 
+        component={Tickets}
+        options={{tabBarIcon: ({focused, size, color}) => (
+          <FontAwesome5 name="money-check-alt" size={size} color={color} />
+        )}} 
+        />
+
+        <Tab.Screen 
+        name='Cardápio' 
+        component={Tickets}
+        options={{tabBarIcon: ({focused, size, color}) => (
+          <MaterialCommunityIcons name="silverware-fork-knife" size={size} color={color} />
+        )}} 
+         />
+        <Tab.Screen 
+        name='Histórico' 
+        component={Tickets}
+        options={{tabBarIcon: ({focused, size, color}) => (
+          <FontAwesome5 name="file-invoice" size={size} color={color} />
+        )}} 
+         />
+      </Tab.Navigator>
     </NavigationContainer>
+    
   )
 }
