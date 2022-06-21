@@ -31,7 +31,7 @@ export function SignIn() {
     .startAsync({ authUrl }) as AuthResponse
 
     if (type === 'success') {
-      navigation.navigate('WalletUEA', {token: params.access_token});
+      navigation.navigate('Carteirinha', {token: params.access_token});
     }
     
   }

@@ -26,7 +26,7 @@ type WalletUEA = {
   picture: string;
 }
 
-export function WalletUEA() {
+export function Carteirinha() {
   const [profile, setProfile] = useState({} as WalletUEA)
   const route = useRoute()
   const navigation = useNavigation();
@@ -57,6 +57,7 @@ export function WalletUEA() {
       style={styles.background}>
       <Header 
       headerTitle='Carteirinha'
+      onPress={handleLogout}
        />
       <View style={styles.content}>
         <View style={styles.profile}>
@@ -92,11 +93,6 @@ export function WalletUEA() {
             style={styles.codigoBarras} 
             source={require('../../assets/codigobarras.png')} />
           </View>
-        <Button
-          title="Desconectar"
-          icon="power"
-          onPress={handleLogout}
-        />
       </View>
       </ImageBackground>
     </View>

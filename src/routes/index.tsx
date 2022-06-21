@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomTabBar } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native';
-import { WalletUEA } from '../screens/WalletUEA';
+import { Carteirinha } from '../screens/Carteirinha';
 import { SignIn } from '../screens/SignIn';
 import { Tickets } from '../screens/Tickets';
 
@@ -25,7 +25,10 @@ export function BottomMenuRoutes() {
           borderTopColor: 'transparent',
           borderEndColor:  'transparent',
           paddingBottom: 5,
-          paddingTop: 5,
+          height: '7%',
+          width: '100%'
+          
+          
         },
         tabBarActiveTintColor : '#B6D96A',
         tabBarInactiveTintColor: '#707365',
@@ -41,8 +44,8 @@ export function BottomMenuRoutes() {
         />
 
         <Tab.Screen 
-        name='WalletUEA' 
-        component={WalletUEA}
+        name='Carteirinha' 
+        component={Carteirinha}
         options={{tabBarIcon: ({focused, size, color}) => (
           <FontAwesome name="id-card-o" size={size} color={color} />
         )}} 

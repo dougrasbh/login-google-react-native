@@ -11,6 +11,9 @@ export const styles = StyleSheet.create({
     backgroundColor: '#B6D96A',
     borderBottomStartRadius: 40,
     borderBottomEndRadius: 40,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   welcome: {
     width: '100%',
@@ -19,6 +22,9 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.bold,
     color: theme.colors.text,
     fontSize: 20,
-    textAlign: 'center'
+    textAlign: 'center',
   },
+  logOutButton: {
+  
+  }
 });

@@ -6,6 +6,7 @@ import {
   ImageBackground } from 'react-native';
 
 import { styles } from './styles';
+import { Header } from '../../components/Header';
 
 export function Tickets() {
 
@@ -16,9 +17,12 @@ export function Tickets() {
     translucent
     />
     <View style={styles.container}>
-      <Text>Tickets Page</Text>
+      <Header 
+      headerTitle='Tickets'
+       />
       <ImageBackground source={require('../../assets/back.png')}
       style={styles.background}></ImageBackground>
+       <Text>Tickets Page</Text>
     </View>
     </>
   );
