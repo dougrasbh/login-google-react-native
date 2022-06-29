@@ -9,7 +9,6 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 
 import { Header } from '../../components/Header';
 import { Avatar } from '../../components/Avatar';
-import { Button } from '../../components/Button';
 
 import { styles } from './styles';
 
@@ -17,7 +16,7 @@ type Params = {
   token: string
 }
 
-type WalletUEA = {
+type Carteirinha = {
   email: string;
   family_name: string;
   given_name: string;
@@ -27,7 +26,7 @@ type WalletUEA = {
 }
 
 export function Carteirinha() {
-  const [profile, setProfile] = useState({} as WalletUEA)
+  const [profile, setProfile] = useState({} as Carteirinha)
   const route = useRoute()
   const navigation = useNavigation();
   const { token } = route.params as Params
@@ -48,10 +47,41 @@ export function Carteirinha() {
 
   return (
     <>
-     <StatusBar
+    <StatusBar
     barStyle='dark-content'
     translucent
     />
+    
+    {/*<Container>
+      <BackgroundImage>
+        <Header 
+        headerTitle='Carteirinha'
+        onPress={handleLogout}
+        />
+        <Content>
+          <UserProfile>
+            <UserName></UserName>
+            <Avatar
+            source={{ uri: profile.picture }}
+            />
+          </UserProfile>
+          <AboutUser>
+            <UserInfo>
+              <UserFullName></UserFullName>
+              <UserCourseName></UserCourseName>
+              <UserSchoolName></UserSchoolName>
+            </UserInfo>
+            <UserNumbers>
+              <UserEnrollNumber></UserEnrollNumber>
+              <UserOtherNumber></UserOtherNumber>
+            </UserNumbers>
+            <BarCode></BarCode>
+          </AboutUser>
+        </Content>
+      </BackgroundImage>
+      
+    </Container>
+  */}
     <View style={styles.container}>
       <ImageBackground source={require('../../assets/back.png')}
       style={styles.background}>

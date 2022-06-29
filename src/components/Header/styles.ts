@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     borderBottomEndRadius: 40,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
   },
   welcome: {
     width: '100%',

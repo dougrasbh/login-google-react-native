@@ -1,11 +1,31 @@
 import { StyleSheet } from 'react-native';
 import { getBottomSpace } from 'react-native-iphone-x-helper';
-import { theme } from '../../styles/theme';
+import {theme} from '../../styles/theme';
+import styled from 'styled-components/native';
+
+export const Container = styled.View`
+  flex: 1;
+  background-color: ${theme.colors.background};
+`
+export const BackgroundImage = styled.ImageBackground`
+  width: 100%;
+  height: 100%;
+`
+export const Content = styled.View`
+  padding-right: 44px;
+  padding-left: 44px;
+`
+export const UserProfile = styled.View`
+  width: 100%;
+`
+export const UserName = styled.Text`
+
+`
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: theme.colors.background,
+    backgroundColor: '#fff',
   },
   background: {
     width: '100%',
