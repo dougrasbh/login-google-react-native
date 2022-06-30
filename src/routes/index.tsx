@@ -2,12 +2,8 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomTabBar } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native';
-import { Carteirinha } from '../screens/Carteirinha';
 import { SignIn } from '../screens/SignIn';
 import { Tickets } from '../screens/Tickets';
-import { Cardapio } from '../screens/Cardapio';
-import { Comprar } from '../screens/Comprar';
-import { Historico } from '../screens/Historico';
 
 import { 
   Entypo, 
@@ -15,6 +11,10 @@ import {
   FontAwesome5,
   MaterialCommunityIcons 
 } from '@expo/vector-icons'
+import { Wallet } from "../screens/Wallet";
+import { Shop } from "../screens/Shop";
+import { Menu } from "../screens/Menu";
+import { Historic } from "../screens/Historic";
 
 
 const Tab = createBottomTabNavigator()
@@ -47,8 +47,8 @@ export function BottomMenuRoutes() {
         />
 
         <Tab.Screen 
-        name='Carteirinha' 
-        component={Carteirinha}
+        name='Wallet'
+        component={Wallet}
         options={{tabBarIcon: ({focused, size, color}) => (
           <FontAwesome name="id-card-o" size={size} color={color} />
         )}} 
@@ -63,23 +63,23 @@ export function BottomMenuRoutes() {
         />
 
         <Tab.Screen 
-        name='Comprar' 
-        component={Comprar}
+        name='Shop' 
+        component={Shop}
         options={{tabBarIcon: ({focused, size, color}) => (
           <FontAwesome5 name="money-check-alt" size={size} color={color} />
         )}} 
         />
 
         <Tab.Screen 
-        name='Cardápio' 
-        component={Cardapio}
+        name='Menu' 
+        component={Menu}
         options={{tabBarIcon: ({focused, size, color}) => (
           <MaterialCommunityIcons name="silverware-fork-knife" size={size} color={color} />
         )}} 
          />
         <Tab.Screen 
-        name='Histórico' 
-        component={Historico}
+        name='Historic' 
+        component={Historic}
         options={{tabBarIcon: ({focused, size, color}) => (
           <FontAwesome5 name="file-invoice" size={size} color={color} />
         )}} 
