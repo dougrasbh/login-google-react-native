@@ -10,7 +10,7 @@ import {
   Poppins_700Bold,
 } from "@expo-google-fonts/poppins";
 
-import { BottomMenuRoutes } from "./src/routes";
+import { Routes } from "./src/routes";
 import { View } from "react-native";
 import { theme } from "./src/styles/theme";
 import { AuthProvider } from "./src/contexts/AuthContext";
@@ -36,7 +36,7 @@ export default function App() {
       >
         <StatusBar style="light" backgroundColor="transparent" translucent />
 
-        <BottomMenuRoutes />
+        <Routes />
       </View>
     </AuthProvider>
   );

@@ -21,9 +21,7 @@ export function Wallet() {
 
   console.log(user);
 
-  async function handleLogout(): Promise<void> {
-
-  };
+  async function handleLogout(): Promise<void> {}
 
   return (
     <>

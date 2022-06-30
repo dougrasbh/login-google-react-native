@@ -6,9 +6,7 @@ import { Container, BackgroundImage, CardapioText } from "./styles";
 import { Header } from "../../components/Header";
 
 export function Menu() {
-  async function handleLogout(): Promise<void> {
-
-  };
+  async function handleLogout(): Promise<void> {}
 
   return (
     <>
