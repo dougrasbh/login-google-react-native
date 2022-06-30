@@ -4,36 +4,21 @@ import { useNavigation } from '@react-navigation/native';
 
 import { Button } from '../../components/Button';
 
-import * as AuthSession from 'expo-auth-session';
-
-const { CLIENT_ID } = process.env
-const { REDIRECT_URI } = process.env
-
 import { styles } from './styles';
-
-type AuthResponse = {
-  type: string;
-  params: {
-    access_token: string;
-  }
-}
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 export function SignIn() {
+  const { signIn } = useAuthContext();
+
   const navigation = useNavigation();
 
   async function handleSignIn() {
-    
-    const RESPONSE_TYPE = 'token';
-    const SCOPE = encodeURI('profile email')
-
-    const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`
-    const { type, params } = await AuthSession
-    .startAsync({ authUrl }) as AuthResponse
-
-    if (type === 'success') {
-      navigation.navigate('Carteirinha', {token: params.access_token});
+    try {
+      await signIn();
+      navigation.navigate("Wallet");
+    } catch(err) {
+      console.log(err);
     }
-    
   }
 
   return (
