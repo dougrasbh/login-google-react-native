@@ -5,12 +5,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Carteirinha } from '../screens/Carteirinha';
 import { SignIn } from '../screens/SignIn';
 import { Tickets } from '../screens/Tickets';
+import { Cardapio } from '../screens/Cardapio';
+import { Comprar } from '../screens/Comprar';
+import { Historico } from '../screens/Historico';
 
 import { 
   Entypo, 
   FontAwesome,
   FontAwesome5,
-  MaterialCommunityIcons } from '@expo/vector-icons'
+  MaterialCommunityIcons 
+} from '@expo/vector-icons'
+
 
 const Tab = createBottomTabNavigator()
 
@@ -27,8 +32,6 @@ export function BottomMenuRoutes() {
           paddingBottom: 5,
           height: '7%',
           width: '100%'
-          
-          
         },
         tabBarActiveTintColor : '#B6D96A',
         tabBarInactiveTintColor: '#707365',
@@ -61,7 +64,7 @@ export function BottomMenuRoutes() {
 
         <Tab.Screen 
         name='Comprar' 
-        component={Tickets}
+        component={Comprar}
         options={{tabBarIcon: ({focused, size, color}) => (
           <FontAwesome5 name="money-check-alt" size={size} color={color} />
         )}} 
@@ -69,14 +72,14 @@ export function BottomMenuRoutes() {
 
         <Tab.Screen 
         name='Cardápio' 
-        component={Tickets}
+        component={Cardapio}
         options={{tabBarIcon: ({focused, size, color}) => (
           <MaterialCommunityIcons name="silverware-fork-knife" size={size} color={color} />
         )}} 
          />
         <Tab.Screen 
         name='Histórico' 
-        component={Tickets}
+        component={Historico}
         options={{tabBarIcon: ({focused, size, color}) => (
           <FontAwesome5 name="file-invoice" size={size} color={color} />
         )}} 

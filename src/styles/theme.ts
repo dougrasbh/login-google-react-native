@@ -6,6 +6,7 @@ export const theme = {
     background: '#fff',
     primary: '#B6D96A',
     secondary: '#000',
+    card: '#EAF2CE',
     text: '#000000',
     shape: '#fff',
     note: '#4E4E5D'
@@ -14,6 +15,9 @@ export const theme = {
     regular: 'Poppins_400Regular',
     medium: 'Poppins_500Medium',
     bold: 'Poppins_700Bold'
+  },
+  img: {
+    background: '../../assets/back.png'
   },
   bottomSpace: Platform.select({
     android: 0,
