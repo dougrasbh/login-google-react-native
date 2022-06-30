@@ -34,15 +34,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
   async function handleGoogleSignIn(): Promise<void> {
-    const { CLIENT_ID, REDIRECT_URI } = process.env;
+    const { CLIENT_ID } = process.env;
+    const { REDIRECT_URI } = process.env;
+
+    console.log(REDIRECT_URI);
     const SCOPE = encodeURI("profile email");
     const RESPONSE_TYPE = "token";
 
     const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
 
-    const { type, params } = await AuthSession.startAsync({
+    const { type, params } = (await AuthSession.startAsync({
       authUrl,
-    }) as AuthResponse;
+    })) as AuthResponse;
 
     if (type === "success") {
       const response = await fetch(
