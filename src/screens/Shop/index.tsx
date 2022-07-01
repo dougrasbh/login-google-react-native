@@ -1,4 +1,4 @@
-import { useNavigation } from "@react-navigation/native";
+import React from "react";
 import { Container, BackgroundImage } from "./styles";
 
 import { Header } from "../../components/Header";

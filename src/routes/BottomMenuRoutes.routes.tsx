@@ -43,6 +43,7 @@ export function BottomMenuRoutes() {
         name="Wallet"
         component={Wallet}
         options={{
+          tabBarLabel: "Carteirinha",
           tabBarIcon: ({ focused, size, color }) => (
             <FontAwesome name="id-card-o" size={size} color={color} />
           ),
@@ -53,6 +54,7 @@ export function BottomMenuRoutes() {
         name="Tickets"
         component={Tickets}
         options={{
+          tabBarLabel: "Tickets",
           tabBarIcon: ({ focused, size, color }) => (
             <Entypo name="ticket" size={size} color={color} />
           ),
@@ -63,6 +65,7 @@ export function BottomMenuRoutes() {
         name="Shop"
         component={Shop}
         options={{
+          tabBarLabel: "Comprar",
           tabBarIcon: ({ focused, size, color }) => (
             <FontAwesome5 name="money-check-alt" size={size} color={color} />
           ),
@@ -73,6 +76,7 @@ export function BottomMenuRoutes() {
         name="Menu"
         component={Menu}
         options={{
+          tabBarLabel: "Cardápio",
           tabBarIcon: ({ focused, size, color }) => (
             <MaterialCommunityIcons
               name="silverware-fork-knife"
@@ -86,6 +90,7 @@ export function BottomMenuRoutes() {
         name="Historic"
         component={Historic}
         options={{
+          tabBarLabel: "Histórico",
           tabBarIcon: ({ focused, size, color }) => (
             <FontAwesome5 name="file-invoice" size={size} color={color} />
           ),

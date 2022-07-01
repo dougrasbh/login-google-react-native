@@ -1,7 +1,7 @@
-import { useNavigation } from "@react-navigation/native";
+import React from "react";
 import { StatusBar } from "react-native";
 
-import { Container, BackgroundImage, CardapioText } from "./styles";
+import { Container, BackgroundImage } from "./styles";
 
 import { Header } from "../../components/Header";
 

@@ -17,11 +17,9 @@ type Carteirinha = {
 };
 
 export function Wallet() {
-  const { user, token } = useAuthContext();
+  const { user } = useAuthContext();
 
   console.log(user);
-
-  async function handleLogout(): Promise<void> {}
 
   return (
     <>

@@ -1,9 +1,9 @@
-import { createContext, ReactNode, useState } from "react";
+import React, { createContext, ReactNode, useState } from "react";
 
 import * as AuthSession from "expo-auth-session";
 
 interface AuthContextData {
-  user: any;
+  user: User;
   isAuthenticated: boolean;
   token: string;
   signIn: () => Promise<void>;
@@ -14,10 +14,11 @@ interface AuthProviderProps {
   children: ReactNode;
 }
 
-// type User = {
-//   name: string;
-//   email: string;
-// };
+type User = {
+  given_name: string;
+  picture: string;
+  name: string;
+};
 
 type AuthResponse = {
   params: {
@@ -29,7 +30,7 @@ type AuthResponse = {
 export const AuthContext = createContext({} as AuthContextData);
 
 export function AuthProvider({ children }: AuthProviderProps) {
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState<User>({} as User);
   const [token, setToken] = useState<string>("");
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 

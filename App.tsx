@@ -1,7 +1,7 @@
 import "react-native-gesture-handler";
 import React, { useCallback } from "react";
 import { StatusBar } from "expo-status-bar";
-import * as SplashScreen from 'expo-splash-screen';
+import * as SplashScreen from "expo-splash-screen";
 import { LogBox } from "react-native";
 
 import {
@@ -25,13 +25,13 @@ export default function App() {
   });
   useCallback(async () => {
     if (fontsLoaded) {
-     await SplashScreen.preventAutoHideAsync();
+      await SplashScreen.preventAutoHideAsync();
     }
-   }, [fontsLoaded]);
+  }, [fontsLoaded]);
 
-    if (!fontsLoaded) {
-      return null
-    }
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
     <AuthProvider>
