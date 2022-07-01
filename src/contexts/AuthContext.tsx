@@ -38,7 +38,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const { CLIENT_ID } = process.env;
     const { REDIRECT_URI } = process.env;
 
-    console.log(REDIRECT_URI);
     const SCOPE = encodeURI("profile email");
     const RESPONSE_TYPE = "token";
 

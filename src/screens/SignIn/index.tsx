@@ -9,7 +9,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 export function SignIn() {
   const { signIn } = useAuthContext();
 
-  async function handleSignIn() {
+  async function handleSignIn(): Promise<void> {
     try {
       await signIn();
     } catch (err) {
