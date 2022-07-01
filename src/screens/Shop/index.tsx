@@ -4,9 +4,7 @@ import { Container, BackgroundImage } from "./styles";
 import { Header } from "../../components/Header";
 
 export function Shop() {
-  async function handleLogout(): Promise<void> {
-
-  };
+  async function handleLogout(): Promise<void> {}
   return (
     <Container>
       <Header headerTitle="Comprar" onPress={handleLogout} />

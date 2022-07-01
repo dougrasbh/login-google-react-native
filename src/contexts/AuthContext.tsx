@@ -34,7 +34,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
   async function handleGoogleSignIn(): Promise<void> {
-    const { CLIENT_ID, REDIRECT_URI } = process.env;
+    const { CLIENT_ID } = process.env;
+    const { REDIRECT_URI } = process.env;
+
+    console.log(REDIRECT_URI);
     const SCOPE = encodeURI("profile email");
     const RESPONSE_TYPE = "token";
 
