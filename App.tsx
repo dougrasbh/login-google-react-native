@@ -1,7 +1,9 @@
 import "react-native-gesture-handler";
+import { useCallback } from "react";
 
 import React from "react";
 import { StatusBar } from "expo-status-bar";
+import * as SplashScreen from 'expo-splash-screen';
 import AppLoading from "expo-app-loading";
 import {
   useFonts,
@@ -21,10 +23,15 @@ export default function App() {
     Poppins_500Medium,
     Poppins_700Bold,
   });
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+     await SplashScreen.hideAsync();
+    }
+   }, [fontsLoaded]);
 
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
+    if (!fontsLoaded) {
+      return <AppLoading />;
+    }
 
   return (
     <AuthProvider>
@@ -33,6 +40,7 @@ export default function App() {
           flex: 1,
           backgroundColor: theme.colors.background,
         }}
+        onLayout={onLayoutRootView}
       >
         <StatusBar style="light" backgroundColor="transparent" translucent />
 
