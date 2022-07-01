@@ -6,12 +6,11 @@ import { CardTicket } from "../../components/CardTicket";
 import { Header } from "../../components/Header";
 
 export function Tickets() {
-  async function handleLogout() {}
   return (
     <>
       <StatusBar barStyle="dark-content" translucent />
       <Container>
-        <Header headerTitle="Tickets" onPress={handleLogout} />
+        <Header headerTitle="Tickets" />
         <TicketsContainer>
           <CardTicket typeTicket="Desjejum" quantity="3" />
           <CardTicket typeTicket="Almoço" quantity="3" />

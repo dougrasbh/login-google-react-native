@@ -6,13 +6,11 @@ import { Container, BackgroundImage, CardapioText } from "./styles";
 import { Header } from "../../components/Header";
 
 export function Menu() {
-  async function handleLogout(): Promise<void> {}
-
   return (
     <>
       <StatusBar barStyle="dark-content" translucent />
       <Container>
-        <Header headerTitle="Cardápio" onPress={handleLogout} />
+        <Header headerTitle="Cardápio" />
         <BackgroundImage
           source={require("../../assets/back.png")}
         ></BackgroundImage>

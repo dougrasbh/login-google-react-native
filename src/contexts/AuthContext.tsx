@@ -29,7 +29,7 @@ type AuthResponse = {
 export const AuthContext = createContext({} as AuthContextData);
 
 export function AuthProvider({ children }: AuthProviderProps) {
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState(null);
   const [token, setToken] = useState<string>("");
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
@@ -62,6 +62,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   function handleGoogleSignOut() {
     setIsAuthenticated(false);
+    setUserData(null);
+    setToken("");
   }
 
   return (

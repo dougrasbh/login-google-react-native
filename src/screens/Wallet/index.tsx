@@ -62,7 +62,7 @@ export function Wallet() {
           source={require("../../assets/back.png")}
           style={styles.background}
         >
-          <Header headerTitle="Carteirinha" onPress={handleLogout} />
+          <Header headerTitle="Carteirinha" />
           <View style={styles.content}>
             <View style={styles.profile}>
               <Text style={styles.name}>Oi, {user.given_name}!</Text>
